@@ -1,5 +1,6 @@
 package Assignment2;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,9 +16,11 @@ class collab {
         for(int i = 0 ; i < arraySize; i++){
             arr[i] = ran.nextInt(101);
         }
+        
 
         do {
             System.out.println("Choose the operation: \n1.Find min \n2.Find max \n3.Find average \n4.Find sum of element depending on odd indexes.\n5.Find sum of element depending on even indexes.\n6.Exit.");
+            System.out.println(Arrays.toString(arr));
             userInput = scanner.nextInt();
             if(userInput==1){
                 System.out.println("Min value of array: " + findMin(arr));
@@ -41,7 +44,7 @@ class collab {
             }
         } while (!exiting);
 
-
+        
     }
     public static int findAvr(int[] arr){
         int sum = 0;
@@ -56,16 +59,11 @@ class collab {
     //method for finding min
     public static int findMin(int [] array)
     {
-        int temp = 100;
-        int min;
-        for (int i = 0; i < array.length; i++)
-        {
-            int num = array[i];
-            if (num <= temp)
-            {
-                temp = num;
+        int min = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] < min){
+                min = array[i];
             }
-            min = num;
         }
         return min;
     }
@@ -73,17 +71,13 @@ class collab {
     //method for finding max
     public static int findMax(int[] array)
     {
-        int temp = 0;
-        int max;
-        for (int i = 0; i < array.length; i++)
-        {
-            int num = array[i];
-            if (num >= temp)
-            {
-                temp = num;
+        int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if(array[i] > max){
+                max = array[i];
             }
-            max = num;
         }
+
         return max;
     }
 
@@ -104,4 +98,5 @@ class collab {
 
         return sum;
     }
+
 }
