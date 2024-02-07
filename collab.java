@@ -23,10 +23,10 @@ class collab {
                 System.out.println("Min value of array: " + findMin(arr));
             }
             else if(userInput==2){
-                System.out.println("Max value of array: " + findMiax(arr));
+                System.out.println("Max value of array: " + findMax(arr));
             }
             else if(userInput==3){
-                System.out.println("Min value of array: " + findSum(arr));
+                System.out.println("Min value of array: " + findAvr(arr));
             }
             else if(userInput==4){
                 System.out.println("Min value of array: " + sumOddIndex(arr));
@@ -40,5 +40,14 @@ class collab {
                 break;
             }
         } while (!exiting);
+    }
+    public static int findAvr(int[] arr){
+        int sum = 0;
+        int avr = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        avr = sum/arraySize;
+        return avr;
     }
 }
