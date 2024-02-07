@@ -46,14 +46,20 @@ class collab {
 
         
     }
-    public static int findAvr(int[] arr){
+    public static int[] findAvr(int[] arr){
+        int[] ans = new int[10];
         int sum = 0;
         int avr = 0;
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
         avr = sum/arraySize;
-        return avr;
+
+        for(int i = 0 ; i < arr.length ; i++){
+            ans[i] = arr[i] - avr;
+        }
+        
+        return ans;
     }
 
     //method for finding min
